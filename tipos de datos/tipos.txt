@@ -1,0 +1,4 @@
+#Tipos de datos
+#hay tres tipos (numeros,textos,booleanoa)
+#los numericos se dividen en: enteros, decimales y complejos
+#los complejos son para operaciones matematicas muy compleja
