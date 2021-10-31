@@ -1,0 +1,76 @@
+Captura de varias excepciones
+Manejo de la sentencia finally
+
+Se puede cometer errores de varios tipos no solo de uno asi que para capturar mas de un error es:
+Primero encontra la linea de codigo que nos puede dar un error
+
+try:
+	op1=(int(input("Introduce el primer numero: "))
+	op2=(int(input("Introduce el segundo numero: "))
+except ValueError:
+	print('Los valores introducidos no son correctos')
+
+--------------------------------------------------------------------------------
+Esta sentencia puede funcionar:
+while True:
+	try:
+		op1=(int(input("Introduce el primer numero: "))
+		op2=(int(input("Introduce el segundo numero: "))
+		break
+	except ValueError:
+		print('Los valores introducidos no son correctos. Intentalo de nuevo')
+
+Explicacion: 
+Cuando while sea True se dara cuenta que es un bloque infinito entonces ejecutará el try
+su las dos lineas de op1 y op2 estan correctas pasará al break y ahí terminará el codigo
+pero si una de ella esta mal, entonces pasara al except y nos imprimira el mensaje
+y despues de imprimirlo el bucle se volverá a iniciar hasta que se cumpla la condicion de TRY
+
+pero esto seria para este caso en concreto donde hay dos excepciones. para eso podemos capturar
+errores de forma consecutiva
+1-Podemos hacer esto
+def divide():
+	try:
+		op1=(int(input("Introduce el primer numero: "))
+		op2=(int(input("Introduce el segundo numero: "))
+		print('La division es: ' + str(op1/op2))
+	except ValueError:
+		print('Los valores introducidos no son correctos.')
+	except ZeroDivisionError:
+		print('No se puede dividir entre 0!')
+
+2-Tambien podemos capturar algo en general, pero es poco recomendable porque el usuario no sabra que paso
+def divide():
+	try:
+		op1=(int(input("Introduce el primer numero: "))
+		op2=(int(input("Introduce el segundo numero: "))
+		print('La division es: ' + str(op1/op2))
+	except:
+		print('Los valores introducidos no son correctos.')
+
+3-Cuando Quieres que un codigo se ejecute siempre debemos meterlo dentro de una sentencia finally
+def divide():
+	try:
+		op1=(int(input("Introduce el primer numero: "))
+		op2=(int(input("Introduce el segundo numero: "))
+		print('La division es: ' + str(op1/op2))
+	except ValueError:
+		print('Los valores introducidos no son correctos.')
+	except ZeroDivisionError:
+		print('No se puede dividir entre 0!')
+	finally:
+		print('Calculo finalizado')
+
+Explicacion:
+Lo que pongas en el finally se va a ejecutar siempre tanto si ocurre o si no ocurre, si todo va bien
+los excepts no se van a leer y el finally se ejecuta y si algo va mal lo que no se ejecuta sera el try 
+pero el finally pasara si o si
+def divide():
+	try:
+		op1=(int(input("Introduce el primer numero: "))
+		op2=(int(input("Introduce el segundo numero: "))
+		print('La division es: ' + str(op1/op2))
+	finally:
+		print('Calculo finalizado')
+
+Aqui no se capturara ningun error pero al menos el programa no cae
