@@ -1,0 +1,31 @@
+Programacion Orientada a Objetos I
+Hay dos formas de programar (Paradigmas)
+la programacion orientada a procedimientos (los mas antiguos) y la orientada a objetos
+
+Lenguajes de Programacion orietnada a procedimientos: Fortran, cobol, Basic,etc.
+estos suelen ser bastantes dificiles de depurar y muy complicado a la hora de programar
+
+Lenguaje de Programacion orientada a objetos: Traslada comportamientos de objetos de la vida real
+a codigos de programacion
+Los objetos tienen un estado, un comportamiento (que hace el objeto) y unas propiedades 
+
+Objeto:
+Tiene propiedades (atributos):
+	-Color
+	-Peso
+	-Alto
+	-Largo
+Tiene un comportamiento (¿Qué es capaz de hacer?)
+	-Arrancar
+	-Frenar
+	-Girar
+	-Acelerar
+
+Vocabulario de la POO
+-Clase
+-Objeto
+-Ejemplar de clase. Instancia de clase. Ejemplarizar una clase. Instaciar una clase
+-Modularizacion
+-Encapsulacion/Encapsulamiento
+-Herencia
+-Polimorfismo

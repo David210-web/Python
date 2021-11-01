@@ -1,0 +1,23 @@
+Programacion Orientada a Objetos II
+Conceptos o terminos de la POO
+
+-Clase: Modelo donde se redactan las caracteristicas comunes de un grupo de objetos
+
+-Instancia: Objeto o ejemplar perteneciente a una clase (Objetos hecho en base a la clase creada)
+
+-Modularizacion: Una aplicacion puede estar compuesta de varias clases (dividir el codigo en partes)
+y los modulos seran las clases y con esto podemos reutilizar codigo, y si tienes una parte mala
+el programa no se caerá
+
+-Encapsulacion: Es para proteger el funcionamiento interno del objeto para que nadie pueda acceder, manipularlo
+ni entenderlo, Si quieres que nadie sepa del funcionamiento interno de una clase, Todas las clases estan combinadas
+entre si para que funcionen como un objeto pero a la vez cada una de ellas esta encapsuladas para 
+que el funcionamiento interna no pueda ser accesible desde fuera, las clases se conectan con algo llamado
+metodos de acceso, creando esto tu consigues conectar unas clases con otras para que funciones como unidad
+o como equipo pero estos metodos van a tener acceso solo a ciertas caracteristicas a algunas de las clases
+
+Todos los objetos deben tener un nombre y para acceder a las propiedades y/o metodos usamos la nomenclatura
+del punto (nombre del objeto punto propiedad/metodo)
+Ejemplo: miCoche.color --- miChoche.arranca()
+
+
