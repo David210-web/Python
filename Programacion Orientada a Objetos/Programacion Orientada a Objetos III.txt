@@ -1,0 +1,31 @@
+Programacion Orientada a Objetos III
+--Herencia en Programacion Orientada a Objetos--
+Que es,para que sirve y como hacer que las clases se hereden.
+
+Se trata de trasladar el comportamiento de la herencia de personas que ocurre en la vida real
+a codigo de programacion.
+
+Ejemplo:
+
+Abuelo -> padre -> Hijo 1, Hijo 2, Hijo 3
+
+cada uno de estos tienen sus bienes, y si el abuelo fallece sus bienen se iran al padre (su hijo), y si el padre
+fallece sus bienes iran al hijo predilecto (tendra los bienen del padre y del abuelo)
+
+las personas son clases en codigo:
+Clase1 (Clase padre) -> Clase2 (subclase de clase 1 y clase padre de clase 3,4,5)
+
+con que objetivo se hace esto:
+
+Para reutilizar codigo en caso de crear objetos similares
+por ejemplo en un programa tenemos que construir objetos de tipo coche,camion,acuatico,moto, etc..
+si estas en esa situacion te va a venir muy bien la herencia y para esto tendras que ver:
+
+-Las caracteristicas en comun que tienen todos los objetos en este caso Marca y modelo
+-Comportamientos en comun que tiene todos los objetos en este caso Arrancar, Acelerar y Frenar.
+
+Si la herencia no existiera tendria que crear los objetos de uno en uno y tendriamos que repetir procedimientos
+para evitar construir un objeto desde 0 usamos la herencia que consiste en agarrar todas las caracteristicas
+y procedimientos en comun y englobarlos en una clase llamada clase padre. se trata de construir una clase
+con todas las clases y metodo en comun y despues las particularidades de cada uno de ellos las construiremos aparte
+en su propia clase y esto nos ayuda a ahorrar codigo
