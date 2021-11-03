@@ -13,7 +13,7 @@ class Vehiculos():
     def arrancar(self):
         self.enmarcha = True
 
-    def acelerar(self):
+    def acelerar(self):i
         self.acelera = True
 
     def frenar(self):

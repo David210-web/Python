@@ -1,0 +1,10 @@
+Programacion Orientada a Objeto Parte Final
+Polimorfismo
+
+Significa muchas formas y cuando se da en programacion quiere decir que un objeto puede cambiar de forma dependiendo de un
+contexto en el que se utilize y por lo tanto al cambiar de forma ese mismo objeto tambien cambia de comportamiento
+
+Ejemplos:
+Un mismo objeto puede cambiar de formas (Puede pasar de ser un camion a ser una moto y de una moto a un carro) dependiendo
+del objeto en que se utilize
+
