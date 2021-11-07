@@ -1,0 +1,5 @@
+--Paquetes distribuibles--
+Sirve para que diferentes personas o nostros mismo podramos usar en codigo y lo podemos enviar mediante emails o github
+pero nos permite empaquetar modulos y script (Se debe crear e instalar)
+
+ 

@@ -1,0 +1,19 @@
+Python considera a los string como objetos y como objetos tienen sus metodos y propiedades
+es la tarea mas frecuentemente usada, como por ejemplo para validar un email
+
+string:
+upper(): Pasa a mayusculas
+lower(): Pasa a minusculas
+capitalize(): Primera letra a mayuscula
+count(): cuenta cuantas veces aparece una palabra o una cadena de caracteres dentro de un texto
+find(): Representa el indice o posicion en cual a aparece el caracter que estamos buscando en el objeto
+isdigit(): Si el valor introducido es un digito
+isalum(): Comprueba si es un alfanumerico
+isalpha(): Ve si solo hay letras
+split(): separa por palabras usando espacios
+strip(): Borra los espacios sobrantes al principio y al final
+replace(): Cambia una palabra o una letra por otra
+rfind(): Hace lo mismo que find pero este lo hace contando desde atras (de derecha a izquierda)
+
+Tiene mas metodos pero estos son los mas importantes, pero podrias acceder a la documentacion de python en google
+en referencia de bibliotecas

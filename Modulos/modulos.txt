@@ -1,0 +1,11 @@
+--Modulos--
+Un archivo con extension .py o .pyc (python compilado) o archivo escrito en C para CPython, que posee su propio espacio de nombres
+y que puede contener variables, funcionesl,clases e incluso otros modulos y sirven para organizar y reutilizar el codigo
+(modularizacion y reutilizacion) porque para crear aplicaciones complejas a veces tendremos o querramos usar codigo que 
+hicimos en el pasado y que podremos implementar en el actual codigo
+
+Si estas repitiendo codigo que hiciste antes algo no va bien, la modularizacion divide el codigo por partes osea una aplicacion
+dividirlas en partes, varios archivos con cientas lineas de codigo porque asi sera mas facil de leer para el programador que leer
+un solo archivo de miles de linea de codigo, esto implica que la aplicacion funcione como puzle que juntos hagan funcionar la app
+
+Para crear un modulo se crea un archivo normal con extension.py (o pyc o archivo C y guardarlo donde nos interese)
