@@ -1,0 +1,69 @@
+-- Archivos externos -- 
+Para como trabajar con ficheros externos de texto con el modulo io (standard)
+El principal objetivo es la persistencia de datos (posibilidad de datos que estas usando para que no se pierda al cerrar el archivo) para trabajar despues en tu aplicacion o en otra aplicacion
+
+-Manejor de archivos externos
+-Trabajo con BBDD
+
+Fases necesarias para guardar informacion en archivos de datos sean cual sea
+la informacion que queremos guardar
+
+-Crear un archivo externo 
+-Una vez creado abrimos el archivo
+-Una vez abierto manipularemos ese archivo para escribir
+nuevos datos o para leer datos
+-Y cuando ya has terminado lo cerramos
+
+Practica: Crearemos un programa que creará un archivo de texto en el mismo directorio donde esta el programa, abriremos y leeremos texto del archivo y lo cerraremos
+
+Manejaremos el modulo io (Ver documentacion en library references)
+
+from io import open
+
+archivo_texto = open('archivo.txt','w') (nombre del archivo, modo(lectura,escritura o append para agregar mas informacion))
+
+y nos creará el archivo y para escribir es:
+
+frase = 'estupendo dia para estudiar python \n en lunes'
+y para incluirla en el archivo es:
+archivo_texto.write(frase)
+entonces la cerramos asi: archivo_texto.close
+
+ahora para abrirlo en modo lectura es:
+archivo_texto = open('archivo.txt','r')
+texto = archivo_text.read()
+archivo_texto.close()
+print(texto)
+
+tambien hay otro metodo llamado readlines(), almacena las lineas del documento linea por linea asi:
+archivo_texto = open('archivo.txt','r')
+lineas_texto = archivo_texto.readlines()
+print(lineas_texto) y para acceder a las lineas pues es como una lista normal: lineas_texto[0] o recorrerlas con for, osea hacer lo que plazca
+
+Para agregar informacion es:
+archivo_texto = open('archivo.txt','a') (a de append)
+archivo_texto.write('\n siempre es una buena ocasion para estudiar python')
+
+-- PARTE II --
+Como trabajar con ficheros externos de texto con el modulo io
+	* Punteros en texto
+
+archivo_texto = open('archivo.txt','r')
+print(archivo_texto.read())
+
+Si no indicamos nada por defecto el puntero se ubica en el inicio
+(osea el cursor) si escribimos algo se escribiria donde esta el puntero
+(osea de primero) y para modificar el cursor lo podemos hacer asi:
+
+con el metodo seek() que nos pedira un parametro que es el numero de la posicion donde queremos que se posicione el puntero
+seek(5) debe estar en la posicion 5
+
+tambien la podemos modificar la posicion con el metodo read()
+print(archivo_texto.read(11))
+
+tambien podemos hacer esto:
+archivo_texto.seek(len(archivo_texto.read())/2) para poner el puntero en la mitad y si estas en el ide el puntero determinara donde leera el archivo la consola
+print(archivo_texto.readline()) para manejar con listas (pondra el puntero al final del primer dato)
+
+para leer y escrbir simultaneamente es asi:
+archivo_texto = open('archivo.txt','r+') pero el puntero estara en la posicion 0 (reemplazara lo escrito ahi) 

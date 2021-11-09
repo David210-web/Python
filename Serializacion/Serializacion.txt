@@ -1,0 +1,35 @@
+-- Serializacion -- 
+Consiste en guardar en un archivo externo las listas, diccionarios o objeto
+pero se guarda codificado en codigo binario con el objetivo de: 
+-Si queremos distribuir un objeto que hemos creado por internet es bueno estar codificado
+-Para guardar un diccionario etc en un almacenamiento externo o base de datos
+
+Para poder serializar usamremos un metodos externo llamado:
+Pickle
+Metodo dump(): Volcado de datos al fichero binario externo
+Metodo load(): carga de los datos del fichero binario externo
+
+importamos:
+import pickle
+
+nombres = ['pedro','ana','maria','isabel']
+
+ahora creamos un fichero externo pero debe tener acceso de escritura binaria
+fichero_binario = open("lista",'wb') (wb para escritura binaria)
+
+ahora volcamos la lista al fichero
+
+pickle.dump(nombres,fichero_binario) (el primero el nombre de lo que vamos a volcar y el otro el nombre del archivo)
+
+fichero_binario.close()
+
+y para rescatarlo es:
+
+import pickle
+
+fichero = open('nombres','rb')
+lista = pickle.load(fichero)
+print(lista)
+
+-- Serializacion II -- 
+serializar objetos
