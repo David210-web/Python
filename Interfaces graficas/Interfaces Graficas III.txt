@@ -1,0 +1,33 @@
+--- Interfaces graficas ---
+Uso del widgtet label 
+
+-Widgets utilizados para mostrar texto o imagenes.
+-Tienen como unica finalidad mostrar texto, no se puede
+interactuar con el (borrar,arrastrar etc)
+
+Sintaxis:
+label = Label(contenedor,opciones) frame, raiz, frame dentro de otro frame 
+
+Ejemplo
+from tkinter import * 
+root = TK()
+miFrame = Frame(root,width=500, height=400)
+miFrame.pack()
+root.title("Prueba")
+
+miImagen = PhotoImage(file="mouse.gif") 
+Label(miFrame, image=miImagen).place(x=100,y=200) Para poner imagenes y no textos
+
+miLabel = Label(miFrame, text=="Hola alumnos de python")
+miLabel.pack() lo tenemos que empaquetar
+Si estas variables de label ya no las vas a usar hacemos esto:
+
+ Label(miFrame, text=="Hola alumnos de python", fg="red",font(18,"Comic Sans MS")).place(x=100, y=200) 
+fg: es para el color del texto (podemos usar codigos hexadecimales)
+font: configuara tamaño, tipo de letras, etc...
+
+A pesar que le hemos dado unas dimensiones a la raiz pero no es porque estamos empaquetando el label
+entonces la raiz se ajusta al tamaño del label pero para que no redimensiones usamos:
+miLabel.place(x=100,y=200) posiciona los elementos con eje X y eje Y
+
+root.mainloop()

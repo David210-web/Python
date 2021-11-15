@@ -1,0 +1,37 @@
+--- Interfaces graficas ---
+Para crear interfaces graficas usamos la libria tkinter (Viene por defecto)
+Y son ventanas con las que nosotros interactuamos con programas
+
+Tambien denominadas GUI, son intermediarios entre el programa y el usuario.
+Formadas por un conjunto de graficos como ventanas, botones, menus, casillas de
+verificacion etc. (Graphic User Interfaces)
+
+Pero tambien tenemos otras librerias para interfaces graficas como:
+Tkinter, WxPython, PyQT y PyGTK
+
+Tkinter es un puente entre python y la librerica TCL/TK
+Y la estructura de una pantalla es:
+
+Raiz (tk) y adentro es habitual que haya un frame que ordene los elementos y adentro los elementos
+que son conocidos como widgets (Un frame tambien es considerado como widget)
+
+Ahorita veremos como construir una raiz:
+
+from tkinter import *
+raiz = TK()
+raiz.mainloop() Una ventana para que pueda estar en ejecucion debe de estar en una especia de bucle infinito
+
+Pero no tendra titulo, y tamaño predeterminado pero para modificar las caracteristicas por defecto hacemos esto:
+
+raiz.title("Ventana de prueba") El metodo mainloop debe estar SIEMPRE al final
+raiz.resizable(0,0) el primer parametro es para width y el otro es para height para que no se redimensione (0 = false y true = 1)
+Tambien puedes poner True o False
+
+Para cambiar el icono previo (Tienes que tener un archivo .ico primero en tu directorio de un tamaño pequeño)
+y para cambiarlo es:
+-raiz.iconbitmap('imagen.ico')
+-raiz.geometry("650x350") para poner el tamaño a gusto
+-raiz.config(bg="blue") para cambiar fondo de la app
+
+Si lo abrimos desde el directorio nos la abrira con la consola de python pero para quitarla es asi:
+solo cambias la extension a .pyw

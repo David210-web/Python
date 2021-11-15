@@ -1,0 +1,28 @@
+--- Interfaces graficas II --- 
+Manejo de frames
+La raiz debe terner un frames donde contenga todos los widgets (Son contenedores aunque en python tambien son llamados widgets)
+
+todo esto antes del mainloop:
+
+miframe = Frame() Con esto construimos el frame pero lo debemos empaquetar (meterlo en la raiz)
+
+miframe.pack (con esto lo empaqueto)
+si dentro del pack ponermos side="right" se ancla en la derecha y asi en todas las direcciones (top,right,bottom,left)
+
+miframe.pack(side="rigth", anchor="n") ancho maneja los puntos cardinales en ingles
+
+miframe.config(bg="red") y aparte debemos darle tamaño (pero la raiz no debe tener tamaño si no al frame)
+
+miframe.config(width:"650",height"350") ya dicho esto podemos redimensionar la raiz, un frame tiene un tamaño fijo
+asi que no se adapta y se queda anclado
+
+miframe.pack(fill="x") se expande en  X  (si ponemos en Y no pasará nada pero para que pase es)
+miframe.pack(fill="y",expand="True")
+miframe.pack(fill="both") se expande con el valor de la raiz
+
+miframe.config(relief="groove") para poner borde 
+miframe.config(bd="35") ancho del borde
+
+miframe.config(cursor="hand2") cambiar el tipo de cursor (pirate es otro de ellos)
+
+Todo esto puede ser aplicado tambien a la raiz
