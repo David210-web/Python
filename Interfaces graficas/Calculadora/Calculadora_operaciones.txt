@@ -1,0 +1,39 @@
+--Proyecto calculadora--
+--Operaciones (Suma, Resta, Multiplicacion, Division)--
+
+Los valores numericos que escribimos en un input siempre son de tipo string entonces tendremos que convertirlo
+
+operacion = "" Esta sera una variable global que almacenará que operacion se va a ejecutar
+resultado = 0 Aqui se ira almacenando la suma de los valores introducidos
+
+Necesito que al pulsar el valor de suma, el valor la variable cambie y pase a ser suma
+
+-------Funcion Suma-------
+def suma(num):
+	global operacio; Esto para indicar que es una variable global
+	global resultado += int(num) Esto solo funcionará con numeros enteros, no decimales
+	operacion = "Suma"; Al pulsar el boton + de la calculadora se haga una llamada a la funcion y que almacene "suma"
+	numeroPantalla.set(resultado) Esto nos permitira ver el resultado de la suma
+
+En el boton de suma pues seria asi: command = lambda: suma(numeroPantalla.get())
+
+Pero para decirle al programa que cuando el valor de la operacion sea suma no siga uniendo numeros en la pantalla
+si no que borre los numeros y que permita seguir uniendo un valor unico seria asi:
+
+def numeroPulsado(num): Esta variable ya la hice en el documento pasado
+	gobal operacion
+	if operacion !=": Si es diferente a esto es porque habra pulsado el boton suma
+		numeroPantalla.set(num) Pero este no concatenará
+		operacion = "" Entonces volviendo a la variable con el valor anterior si podra concatenar
+	else: Si la condicion no es verdadera pues se hace lo mismo que antes
+		numeroPantalla.set(numeroPantalla.get() + num)
+
+Para que el igual tambien nos muestre el resultado de la operacion es asi:
+
+
+def el_resultado(): No podemos poner resultado porque ya hay una variable global con ese mismo nombre
+	global resultado
+	numeroPantalla.set(resulado+int(numeroPantalla.get())) Para sumar la variable con el numero mostrado en pantalla
+	resultado = 0 La variable debe ser reseteada
+
+Y la debemos llamar en el boton de resultado: command = lambda:el_resultado()

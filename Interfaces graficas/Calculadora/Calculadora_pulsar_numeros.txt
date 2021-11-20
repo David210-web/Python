@@ -1,0 +1,26 @@
+--Proyecto calculadora--
+Funcionalidad (Que a pulsar los botones los numeros aparezcan en la pantalla)
+
+Para esto llamaremos desde el boton que llame a una funcion:
+
+Funcionalidad:
+
+NumeroPantalla = StringVar()
+
+y en el Entry(textvariable=numeroPantalla)
+
+---Pulsaciones Teclado---
+def numeroPulsado(num):
+	numeroPantalla.set(numeroPantalla.get() + num)
+
+En python cuando usamos los parentesis en una funcion estamos ejecutando el codigo de la funcion guardandolo en command
+entonces python debe almacenar en command lo que devuelva la funcion, hace la llamada automatica, no la hacemos nosotros
+Entonces nosotros solo queremos que se llame cuando tocamos el boton
+
+Para eso usamos las funciones lambda (Solo un ejemplo)
+
+En el boton es:
+
+command=lambda:numeroPulsado(4)
+
+Y asi copiamos y pegamos en todos los botones menos en los de operaciones matematicas

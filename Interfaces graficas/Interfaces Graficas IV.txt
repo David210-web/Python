@@ -1,0 +1,50 @@
+--Interfaces graficas--
+Crear inputs (Widget Entry)
+Tienes las mismas opcines que tiene un label
+
+Ejemplo
+from tkinter import *
+raiz = TK()
+miFrame = Frame(raiz,width=1200,height=600)
+miFrame.pack()
+cuadroTexto = Entry(miFrame)
+cuadroTexto.place(x=100,y=100)
+cuadrado.pack
+raiz.mainloop()
+
+Pero con eso tenemos dificultades para colocar objetos
+
+nombreLabel = Label(miFrame,text="Nombre:")
+nombreLabel.place() pero aqui tenemos que calcular las alturas para que concuerde con el input y eso no es practico
+para eso podemos hacer lo siguiente:
+Trabajamos con pack() aunque el tamaño de la raiz no nos hara caso
+o con el metodo grid() crea una grilla como display:grid de CSS :
+
+cuadroTexto.grid() lleva dos parametros (row y column) queremos construir una grilla de 3x3  y queremos colocar algo en la
+primera casilla (comienza a contabilizar desde cero) 0,1,2 en este caso asi:
+
+nombreLabel.grid(row=0,column=0)
+cuadroTexto.grid(row=0,column=1) y asi para agregar elementos 
+
+y asi podemos agregar mas
+
+ApellidoLabel = Label(miFrame,text="Nombre:")
+ApellidoLabel.grid(row=1,column=0)
+cuadroApellido = Entry(miFrame)
+cuadroApellido.grid(row=1,column=1)
+
+Si queremos alinear los label como queremos es asi:
+nombreLabel.gird(row= 1, column = 1, sticky= "e") trabaja con los puntos cardinales (n,e,s,w) y (ne,sw,nw)<- noreste,sureste,noroeste
+
+Para poner los padding a un input o boton (ese aun no le he visto)
+es con: pady = eje y, padx = eje x y siempre va en la funcion grid
+nombreLabel.gird(row= 1, column = 1, sticky= "e",padx=10,pady=10)
+
+tambien podemos trabajar con config() y sus propiedades para los label e inputs:
+cuadroNombre.config(justify="center")
+
+Si queremos agregar un campo password es:
+cuadroPassword = Entry(miFrame)
+cuadroPasss.grid(x=2,y=2)
+cuadroPass.config(show="*") con esto podemos sustituir los datos con un asterisco o con cualquier cosa
+

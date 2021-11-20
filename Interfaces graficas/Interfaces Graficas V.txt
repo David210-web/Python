@@ -1,0 +1,49 @@
+-Interfaces Graficas V--
+Widget Text = Son utilizados para introducir texto largo
+Widget Button: Botones para interactuar con la interfaz
+
+Para agregar Text es asi:
+comentariosLabel = Label(miFrame, text="comentarios")
+textoComentarios = Text(miFrame)
+textoComentarios.grid(row=4,column=1,padx=10,pady=10)
+
+Para darle dimensiones es:
+textoComentarios = Text(miFrame,width=15,heigth=5)
+
+Para agregarle un scrooll bar es:
+scrooll = Scroollbar(miFrame,command=textoComentario.yview) aqui le decimos que pertenece al textComentario y que tiene vista en
+vertical
+scrooll.grid(row=4,column=2) aqui lo agregamos al codigo
+
+Para que el scroll bar quede incorporado en el widget text, se deja en la misma columna, se le asigna el mismo padding
+y en el parámetro sticky se asigna el valor "nse". Ejemplo:
+
+textComentarios = Text(miFrame, width=16, height=5)
+textComentarios.grid(row=4, column=1, pady=10)
+scrollYComentarios= Scrollbar(miFrame, command=textComentarios.yview)
+scrollYComentarios.grid(row=4, column=1, pady=10, sticky="nse")
+textComentarios.config(yscrollcommand=scrollYComentarios.set)
+
+Para adaptar las dimensiones del scrooll a su widget:
+scrooll.grid(row=4,column=2, sticky="nse")  Aqui se adapta a la altura de su widget
+
+Y para indicar que posicion en el texto en la que nos encontramos es:
+
+textComentarios.config(yscrollcommand=scroll.set) aqui se pone el nombre del scrooll en mi pues es scrooll pero se pone como uno
+quiera
+
+Para agregar Botones es:
+btnEnv = Button(raiz,text="Enviar") En vez de la raiz en el frame tendremo que jugar con el grid
+botonEnvio.pack()
+
+Para agregar instrucciones al boton es:
+btnEnv = Button(raiz,text="Enviar", command=codigoBoton) codigoBoton es una funcion que tenemos que construir
+
+miNombre=StringVar() Esto indica que es una cadena de caracteres
+cuadroNombre = Entry(miFrame,textvariable=minombre) Aqui le decimos que este input esta asociado con mi nombre y el valor
+lo asignamos cuando apretamos el boton con su funcion
+
+def codigoBoton():
+	miNombre.set('juan') Esta es una variable que antes no estaba indefiinida
+
+para Obtener el valor de un input en python es con get
