@@ -1,6 +1,6 @@
 from tkinter import *
 raiz = Tk()
-raiz.title('Calculadora')
+raiz.title('Calculadora2')
 raiz.iconbitmap('imagen.ico')
 
 miFrame = Frame(raiz)
@@ -25,10 +25,9 @@ reset_pantalla = False
 #--Al pulsar numero aparecera en pantalla--
 def pulsarNumero(num):
     global operacion
-    global reset_pantalla
-    if reset_pantalla != False:
+    if operacion != '':
         numeroPantalla.set(num)
-        reset_pantalla = False
+        operacion = ""
     else:
         numeroPantalla.set(numeroPantalla.get() + num)
 
@@ -45,45 +44,15 @@ def suma(num):
     numeroPantalla.set(resultado)
 
 #--Funcion resta--
-num1 = 0
-contador_resta = 0
+num
 def resta(num):
     global operacion
-    global resultado
-    global num1
-    global contador_resta
-    global reset_pantalla
-
-    if contador_resta == 0:
-        num1 = int(num)
-        resultado = num1
-    else:
-        if contador_resta == 1:
-            resultado = num1 - int(num)
-        else:
-            resultado = int(resultado) - int(num)
-
-        numeroPantalla.set(resultado)
-        resultado = numeroPantalla.get()
-
-    contador_resta = contador_resta+1
-    operacion = "resta"
-    reset_pantalla = True
-
-#--Funcion multiplica--
 
 #--Funcion de resultado--
 def el_resultado():
     global resultado
-    global operacion
-    global contador_resta
-    if operacion == 'suma':
-        numeroPantalla.set(resultado + int(numeroPantalla.get()))
-        resultado = 0
-    elif operacion == 'resta':
-        numeroPantalla.set(int(resultado) - int(numeroPantalla.get()))
-        resultado = 0
-        contador_resta = 0
+    numeroPantalla.set(resultado + int(numeroPantalla.get()))
+    resultado = 0
 
 #Botones
 #Primera fila de botones
