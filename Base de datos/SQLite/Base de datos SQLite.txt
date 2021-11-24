@@ -1,0 +1,31 @@
+--Base de datos--
+Insercion de varios registros
+Recuperacion de varios registros
+
+Para esto usamos una tupla dentro de las listas
+
+variosProductos = [
+    ("Camiseta", 10, "Deportes"),
+    ("Jarron", 10, "Ceramica"),
+    ("Camion", 10, "Jugueteria"),
+]
+
+
+Tienes que insertar la misma cantidad de interrogantes como campos
+quieras utilizar (La lista tiene 3 campos pues son 3 interrogantes)
+y el siguiente parametro es la lista donde esta los valores (nombre de la lista)
+Siempre se debe de comentar despues de ser ejecutada por primera vez
+
+miCursor.executemany("INSERT INTO Productos VALUES (?,?,?)",variosProductos)
+
+Pero para hacer una consulta es:
+miCursor.execute("SELECT * FROM Productos")
+
+listaProductos = miCursor.fetchall() Esto nos devuelve una lista con todos los registros de la consulta
+de mi cursor y la guardamos en la variable
+
+print(listaProductos) Luego imprimimos la lista
+
+for producto in listaProductos:
+    print(producto)
+    print("Nombre articulo: ", producto[0],"Seccion: ", producto[2]) Para acceder a un campo
