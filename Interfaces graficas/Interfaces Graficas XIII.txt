@@ -1,0 +1,21 @@
+--Interfaces graficas XIII
+Ventana emergente para abrir archivos
+
+e igual que la anterior debemos importar aparte esa ventana
+from tkinter import filedialog
+
+def abrirFichero():
+	fichero = filedialog.askopenfilename(title="Abrir")
+	print(fichero)
+
+Button(root,text="Abrir fichero",command=abrirFichero).pack()
+
+ y el metodo nos devuelve la ruta que queremos abrir (por defecto se va a buscar en documentos) pero si queremos especificar un
+origen diferente agregamos un parametro mas:
+
+fichero = filedialog.askopenfilename(title="Abrir",initialdir="C:") y si queremos especificar que tipo de archivos es con:
+fichero = filedialog.askopenfilename(title="Abrir",initialdir = "C:",filetypes=(("Ficheros de Excel,""*.xlsx"),
+("Ficheros de texto","*.txt"),("Todos los archivos","*.*"))) esto nos pide una tupla
+
+Si ponemos solo una extension para abrir nos va a salir error (Pero siempre es una buena opcion dejar una opcion para abrir todos los
+archivos)

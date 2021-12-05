@@ -1,0 +1,42 @@
+--Bases de datos--
+Conexion, e insercion de registro
+
+Python puede leer estos sistemas de gestores de bases de datos:
+-SQL server
+-Oracle
+-Mysql
+-SQLite
+-PostgreSQL 
+
+Todos estos son lenguaje SQL (Aqui usaremos MySql y SQLite)
+-Sistema de gestion de BBDD relacional
+-Escrito en C, es de codigo abierto
+-Forma parte integral del programa
+-Se guarda como un unico fichero en host
+
+Estaba base esta integrada directamente en la aplicacion y es de dominio publico y multiplataformas pero no admite
+clausulas anidadas (La opcion Where)
+
+Pasos a seguir
+1-Abrir - Crear conexion
+2-Crear puntero o cursor(nos sirve para crear Querys y manejar resultados)
+3-Ejecutar query (consulta) SQL (con el puntero)
+4-Manejar los resultados de la query (consulta) Insertar, Leer, Actualizar, Borrar (Create,Read,Update,Delete)
+5-Cerrar puntero
+6-Cerrar conexion
+
+En codigo (SQLite):
+import sqlite3
+
+1-miConexion = sqlite3.connect("PrimeraBase") 
+2-miCursor = miConexion.cursor()
+3-miCursor.execute("CREATE TABLE Productos (nombre_articulo VARCHAR(50), precio INT, seccion VARCHAR(20))")
+Se crea la tabla con los campos si queremos ver el archivo pues ponemos visor sqlite en google y nos descargasmo uno,
+pero solo la debemos de ejecutar (la sentencia) cuando ejecutamos la tabla por primera vez despues la comentamos
+porque si no saldra error
+4-miCursor.execute("INSERT INTO Productos VALUES ('balon',15,'Deportes')")
+5-Para verificar la confirmacion es: miConexion.commit()
+
+miConexion.close()
+
+Y al ejecutar el programa se crea el archivo de base de datos que se almacena en la carpeta donde esta el archivo

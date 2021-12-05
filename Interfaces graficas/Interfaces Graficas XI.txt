@@ -1,0 +1,29 @@
+--Interfaces graficas--
+Menu
+Barra en la parte superior con opciones de submenu
+
+barraMenu = Menu(root)
+root.config(menu=barraMenu,width=300,height=300) Con esto nos construye el menu
+
+Para establecer cuanto elementos tendra el menu:
+archivoMenu = Menu(barraMenu,tearoff= 0) el tearoff quita el separador que esta en las lineas "--------"
+archivoEdicion = Menu(barraMenu)
+archivoHelp = Menu(barraMenu)
+archivoTools = Menu(barraMenu)
+
+Y aqui hay que decirle cual es el texto que sale en el elemento del menu
+barraMenu.add_cascade(label="Archivo",menu=archivoMenu)
+barraMenu.add_cascade(label="Edicion",menu=archivoEdicion)
+barraMenu.add_cascade(label="Herramientas",menu=archivoHerramientas)
+barraMenu.add_cascade(label="Ayuda",menu=archivoMenu=archivoAyuda)
+
+y para sub menu es:
+archivoMenu.add_command(label="Nuevo")
+archivoMenu.add_command(label="Abrir")
+archivoMenu.add_command(label="Guardar")
+archivoMenu.add_command(label="Salir")
+archivoMenu.add_command(label="Cerrar")
+
+Y para crear barras horizontales para dividir opciones es asi:
+En medio de los elementos que queremos separan creamos el separador
+archivoMenu.add_separator()

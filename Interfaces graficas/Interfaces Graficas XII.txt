@@ -1,0 +1,42 @@
+--Interfaces graficas XII--
+Ventanas Emergentes
+
+Ventanas modales para informar, avisar o permitr realizar tareas al usuario
+no aparecen en la version estandar de tkinter asi que debemos importarlas asi:
+from tkinter import messagebox
+
+Sintaxis:
+
+La sacaremos del menu que creamos anteriormente (en la pestaña de ayuda en una opcion)
+
+def infoAdicional():
+	messagebox.showinfo("Procesador de David","Quiero mostrar un mensaje en pantalla") 
+	Admite dos paremetros (Titulo de la ventana y el texto que tendra la ventana)
+
+y en la opcion de:
+archivoAyuda.add_command(label="Acerca de...", command=infoAdicional) con la propiedad command
+y saldra la ventana emergente comun
+
+Podremos modificar muchas cosas para diferentes tareas como el icono, el sonido de la ventana y las opciones de botones
+y para eso es:
+
+Queremos contruir una ventana de aviso
+def avisoLicencisa():
+	messagebox.showwarning("Licencia","Producto bajo licencia GNU) para ventanas de emergencias
+	Aqui cambiara el icono a uno de precaucion
+
+Ejemplo mas practico
+def salirApp():
+	valor = messagebox.askquestion("Salir","¿Deseas salir de la app?") Con esta saldra una ventana interrogante y con este metodo
+	podemos recibir un valor (Para si o no devuelve yes y no) y lo podemos cambiar a cancelar y aceptar asi:
+	valor = messagebox.askokcancel("Salir","¿Deseas salir de la app?") pero aqui devuelve true o false
+	if valor == "yes":
+		root.destoy()
+	if valor == True:
+		root.destoy()
+
+Para los botones de reintentar o cancelar:
+def cerrarDoc():
+	valor messagebox.askretrycancel("Reintentar","No es posible cerrar, Documento bloqueado")
+	if valor == True:
+		root.destroy()

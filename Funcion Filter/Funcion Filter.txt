@@ -1,0 +1,44 @@
+--Funcion Filter--
+Verifica que los elementos de una secuencia cumplen una condicion, devolviendo un iterador con los elementos que cumplen
+dicha condicion
+
+Imaginenos que queremos crear una funcion que detecte numeros pares e impares
+
+def numero_par(num):
+	if num % 2 == 0:
+		return True
+
+numeros[17,24,7,39,6,51,92]
+
+filter es capaz de devolvernos los numeros pares
+print(list(filter(numero_par,numeros))) Recibe dos argumentos el primero la funcion, y la lista de numeros
+
+Y nos devuelve los valores pares
+
+Y con funciones lambda puede ser:
+
+numeros[17,24,7,39,6,51,92]
+print(list(filter(lambda numero_par: numero_par%2==0,numeros)))
+Casi siempre usamos filter para filtrar objetos 
+
+class empleado:
+	def __init__(self,nombre,cargo,salario):
+		self.nombre = nombre
+		self.cargo = cargo
+		self.salario = salario
+	def __str__(self):
+		return f"{self.nombre} que trabaja como {self.cargo} tiene un salario de {self.salario $}"
+
+
+listaEmpleados = [
+Empleado("Juan","Director",7500),
+Empleado("Ana","Presidenta",8500),
+Empleado("Antonio","Administrativo",25000),
+Empleado("Sara","Secretaria",27000),
+Empleado("Mario","Botones",7500),
+]
+
+la funcion filter sera capaz empleados cuyo salario sea mayor de 50,000
+salarios_altos = filter(lambda empleado:empleado.salario > 50000,listaEmpleados)
+for salario in salarios_altos:
+	print(salario)

@@ -1,0 +1,37 @@
+--Base de datos IV--
+clausula UNIQUE
+operaciones CRUD
+
+Muchas veces surge la necesidad de que dos campos no repitan informacion (Por ejemplo si tu quieres que el nombre de los articulos
+sean nombres unicos) para eso simplemente agregamos la palabra clave UNIQUE y con eso impedimos que se repita informacion en
+ese campo, si son iguales dara error
+
+miCursor.execute(''' 
+	CREATE TABLE PRODUCTOS(
+		ID INTEGER PRIMARY KEY AUTOINCREMENT,
+		NOMBRE_ARTICULO VARCHAR(50) UNIQUE,
+		PRECIO INTEGER,
+		SECCION VARCHAR(20))
+''')
+
+Operaciones crud
+
+Crear (Create)
+Tablas: ("CREATE TABLE PRODUCTOS")
+Valores: ("INSERT INTO PRODUCTOS VALUES (NULL,?,?,?)", productos)
+
+Leer (Read)
+("SELECT * FROM PRODUCTOS")
+("SELECT * FROM PRODUCTOS WHERE ID = 1")
+
+productos = miCursor.fetchall()
+print(productos)
+
+Modificar (Update)
+("UPDATE PRODUCTOS SET PRECIO=35 WHERE ID = 1")
+
+Borrar (Delete)
+("DELETE FROM PRUDUCTOS WHERE ID = 1")
+
+Para delete es obligatorio poner la clausula where porque si no se borrará toda la tabla 
+(y no hay manera de rescatar de esa informacion)

@@ -1,0 +1,29 @@
+Base de datos Mysql
+---Insert,Update y Delete---
+
+
+--Insert (Para insertar datos en la tabla)--
+
+con el cursor creado hacemos:
+cursor.execute("INSERT INTO tipousuario (nombre) VALUES ('Vigilante)") Para agregar
+conexion.commit() Para confimar la accion que estamos ejecutando
+print("Registro completo")
+conexion.close() 
+
+Haremos que el usuario lo haga dinamicamente:
+nombre = input("Ingrese nombre de usuario)
+cursor.execute(f"INSERT INTO tipousuario (nombre) VALUES ({nombre})") Para agregar
+
+--Update (Para modificar datos en la tabla)--
+
+cursor.execute("UPDATE tipo usuario SET nombre="Conserje", Vigencia = 0 WHERE ID= 7) Para modificar
+conexion.commit() Para confimar la accion que estamos ejecutando
+print("Modificacion completa")
+conexion.close() 
+
+--Delete (Para eliminar datos de una tabla (o la tabla))--
+
+cursor.execute("DELETE * from WHERE ID= 7) Para Eliminar
+conexion.commit() Para confimar la accion que estamos ejecutando
+print("Registro Eliminado completamente")
+conexion.close() 

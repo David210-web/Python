@@ -1,0 +1,46 @@
+--Expresiones Regulares--
+Son un mini lenguaje de programacion dentro de otro lenguaje de programacion
+
+Las expresiones regulares son una secuencia de caracteres que forman un patron de busqueda y sirven para el trabajo y 
+procesamiento de texto por ejemplo:
+
+La manipulacion de texto es de las cosas mas usadas en un lenguaje de programacion y con esto podemos crear patrones
+
+-Buscar texto que se ajusta a un formato determinado (correo electronico)
+-Buscar si existe o no una cadena de caracteres dentro de un texto
+-Contar el numero de coincidencias dentro de un texto
+-Etc.
+
+Echar un vistazo a la documentacion regular expression python (Estará en ingles but i can read it)
+
+Ejemplo:
+import re Importamos el metodo re
+
+cadena = "Vamos a aprender expresiones regulares"
+
+search() Busca un string y lo localiza donde esta
+print(re.search("aprender",cadena)) el primer parametro es la cadena que queremos buscar y el segundo parametro es la variable
+donde esta la cadena
+
+Pero la ejecucion nos devuelve un objeto (Pero lo ha encontrado y te dice donde esta) si nos devuelve un objeto significa que el objeto
+esta y si no esta devuelvera None
+
+textoBuscar = "Aprender"
+if re.search(textoBuscar,cadena) is not None:
+	print("He encontrado el texto"):
+else:
+	print("No he encontrado el texto")
+
+textoEncontrado = re.search(textoBuscar,cadena) Almacenamos el objeto en la variable
+print(textoEncontrado.start()) Esto nos devuelve el numero de caracter donde comienza el texto buscar 
+(comienza desde 0 y cuentan espacios)
+
+print(textoEncontrado.start()) Lo mismo pero es para el final
+
+print(textoEncontrado.span() nos devuelve en una tupla el caracter donde comienza el texto y el caracter donde finaliza el texto
+encontrado
+
+cadena2 = "Vamos a aprender expresiones regulares en python. Python es un lenguaje de sintaxis sencilas"
+textoBuscar = "Python" quiero buscar todas las coincidencias 
+print(re.findall(texttoBuscar,cadena)) Y nos devolvera una lista que adentro tendra los strings que han coincidido con la busqueda
+print(len(re.findall(texttoBuscar,cadena))) Y con esto sabremos cuantas veces se repite python

@@ -1,0 +1,33 @@
+--Interfaces graficas X-- 
+Checkbutton
+
+Son botones de seleccion para preguntas de respuesta multiple asi:
+foto = PhotoImage(file="avion.png")
+Label(root,image=foto).pack
+
+frame = Frame(root)
+frame.pack()
+
+playa = IntVar()
+montaña = IntVar()
+turismoRural = IntVar()
+
+def opcionesViaje():
+	opcionEscojida = ''
+	if(playa.get() == 1):
+		opcion Escogio+="Playa"
+	
+	if(montaña.get() == 1):
+		opcion Escogio+="montaña"
+
+	if(turismoRural.get() == 1):
+		opcion Escogio+="Turismo rural"
+	textoFinal.config(text=opcionEscojida)
+
+Label(frame,text="Elige destinos", width=50).pack()
+Checkbutton(frame,text="Playa",variable=playa,offvalue=0,onvalue=1).pack() onvalue = 1 el valor que tiene el check cuando esta seleccionado y offvalue es el valor
+que tiene cuando esta desactivado
+Checkbutton(frame,text="Montaña",onvalue=1,variable=playa,offvalue=0).pack()
+Checkbutton(frame,text="Turismo rural",onvalue=1,variable=playa,offvalue=0).pack()
+textoFinal = Label(frame)
+textoFinal.pack()

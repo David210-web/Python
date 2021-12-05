@@ -1,0 +1,42 @@
+--Conexion con MySQL--
+Instalacion de Driver mysql-connector-python y mas
+
+import mysql.connector
+frommysql.connector import error
+
+Creamo una excepcion por si tenemos un error
+
+try:
+	conexion = mysql.connector.connect(
+		host = 'localhost',
+		port = 3306,
+		user = 'root',
+		password = '123456',
+		db = 'condominio'
+	)
+	
+	if conexion.is_connected():
+		print("Conexion Exitosa")
+		infoserver = conexion.get_server_info()
+		print(f"Info del servidor: ", infoserver)
+
+except:Error as ex:
+	print("Error durante la conexion", ex)
+finally:
+	if conexion.is_connected():
+		conexion.close()
+		print("Conexio terminada")
+
+
+--Sentencia SELECT--
+Necesitamos el cursor como en sqlite
+cursor = conexion.cursor()
+cursor.execute("SELECT database()") #database obtiene el nombre de la base de datos y esto arroja un resultado
+registro = cursor.fetchone()
+printt("Conectado a ", registro)
+
+Pero la sentencia normal es:
+cursor.execute("SELECTO * FROM tipousuario")
+datos = cursor.fetchall()
+for dato in datos:
+	print(dato)

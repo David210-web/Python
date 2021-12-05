@@ -1,0 +1,33 @@
+--Funciones MAP--
+Aplica una funcion a cada elemento de una lista iterable (listas,tuplas,etc) devolviendo una lista con los resultados
+
+Con la funcion map sustituye el primer argumento de filter sustituido por una funcion
+
+class empleado:
+	def __init__(self,nombre,cargo,salario):
+		self.nombre = nombre
+		self.cargo = cargo
+		self.salario = salario
+	def __str__(self):
+		return f"{self.nombre} que trabaja como {self.cargo} tiene un salario de {self.salario $}"
+
+
+listaEmpleados = [
+Empleado("Juan","Director",6700),
+Empleado("Ana","Presidenta",7500),
+Empleado("Antonio","Administrativo",2100),
+Empleado("Sara","Secretaria",2150),
+Empleado("Mario","Botones",1800),
+]
+
+Calcularemos solo para los salarios bajos
+def calculo_empleado(empleado):
+	if empleado.salario <= 3000:
+		empleado.salario = empleado.salario*1.03 Esto es por sumar un 3% incrementado
+	return empleado
+
+listaEmpleadosComision = map(calculo_comision,listaEmpleados)
+for empleado in listaEmpleadoComision:
+	print(empleado)
+
+Con la funcion map podemos jugar con mas condiciones no solo con una como en filter
